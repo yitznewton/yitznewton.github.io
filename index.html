@@ -11,7 +11,7 @@ layout: default
   </header>
 
   <ul class="posts">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
       <li>
         <time class="post-date">{{ post.date | date: "%b %-d, %Y" }}</time>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
@@ -25,6 +25,8 @@ layout: default
       </li>
     {% endfor %}
   </ul>
+
+  {% include pagination.html %}
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 

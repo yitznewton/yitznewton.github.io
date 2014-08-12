@@ -8,6 +8,7 @@ url: "http://yitznewton.org"
 twitter_username: YitzOfTheBits
 github_username:  yitznewton
 excerpt_separator: <!-- more -->
+paginate: 10
 
 # Build settings
 markdown: kramdown

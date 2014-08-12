@@ -1,0 +1,11 @@
+<nav class="pagination">
+  {% if paginator.page == 2 %}
+    <a href="{{ site.baseurl }}/">« less</a>
+  {% elsif paginator.previous_page %}
+    <a href="{{ site.baseurl }}/page{{ paginator.previous_page }}">« less</a>
+  {% endif %}
+
+  {% if paginator.next_page %}
+    <a href="{{ site.baseurl }}/page{{ paginator.next_page }}">moar »</a>
+  {% endif %}
+</nav>
