@@ -13,7 +13,7 @@ published: true
 I've been doing software for about six years professionally. It was a few years into my career that I first heard about Aspect Oriented design (AOP == Aspect Oriented Programming is your buzzword).
 
 Here's the premise. A given piece of code exists for a certain purpose - let's say, to retrieve a record from a database. But there may be any number of other things that need to happen in addition to the actual retrieval: logging, access control, caching... those are known as *cross-cutting concerns* -- issues that are relevant across the codebase, but are not specifically relevant to any one piece of code where they might be needed. And being that these bits of functionality are not intrinsically connected with data retrieval, in our example, it would make sense for them to be disconnected from the retrieval implementation.
-
+<!-- more -->
 _**Pedantic disclaimer**: the following code is meant for illustrative purposes only; any design issues are beside the point_
 
 So if I wanted to log the retrieval, I could do:
@@ -187,7 +187,7 @@ Or something like that... my Lithium-fu is rusty. And therein lies the fail. I w
 
 In writing the filters, you have to maintain the filter chain, and get it right whether your filter goes before or after the `$chain->next()` call. As you can see from the example, there's also a lot of baggage that comes along with the use of closures: three context variables are passed into each closure, and require manipulation and passing along. More cognitive overhead. The slippery slope of closure spaghetti made me loath to actually use the technique; it was a razor thin line between power and abuse.
 
-![Don't tempt me!](https://31.media.tumblr.com/20277559083f319b000f11e8ab9d1ac1/tumblr_inline_n190kmqcsP1qhp1cd.gif)
+![Don't tempt me!]({{ site.baseurl }}/assets/dont-tempt.gif)
 
 > With that power I should have power too great and terrible.
 >
@@ -265,7 +265,7 @@ I endeavored to keep as much code as possible in regular static PHP classes, bec
 
 Have any more reasons why using this in production would be particularly good or bad?
 
-![Surprisingly OK](https://31.media.tumblr.com/19017a6efbc6a8b8d12be01cc28ae7f9/tumblr_inline_n190jndjdc1qhp1cd.jpg)
+![Surprisingly OK]({{ site.baseurl }}/assets/surprisingly-ok.jpg)
 
 Let us know in the comments!
 
