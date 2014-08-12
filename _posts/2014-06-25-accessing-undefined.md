@@ -77,13 +77,13 @@ JavaScript and its `undefined` property is its own mess, so I'll just say that J
 
 Which brings us to the topic of this post. Similarly to Java, when accessing nonexistent members of an associative array in PHP, [`null` is returned, but with an `E_NOTICE` error](http://us1.php.net/manual/en/language.types.array.php#language.types.array.syntax.accessing). So, leveraging the beautiful [Elvis operator](http://en.wikipedia.org/wiki/Elvis_operator) (one of my favorite syntactic sugar cubes), we get:
 
-{% highlight php %}
+{% highlight php startinline %}
 $foo['bar'] ?: $default  // throws E_NOTICE
 {% endhighlight %}
 
 To bypass the logic flaw of the `null`, we "can often assume" that `null` is not a possible value for the array in question. I had (or saw someone employ) the brilliant idea of using PHP's error suppression operator, `@`, to make this behave like the Java version, i.e. not throw the `E_NOTICE`:
 
-{% highlight php %}
+{% highlight php startinline %}
 @$foo['bar'] ?: $default  // E_NOTICE is suppressed
 {% endhighlight %}
 
@@ -103,7 +103,7 @@ Ha! So, to address the first concern, if we are disciplined we can only use this
 
 We're also fortunate to have [Richard Wossal](https://twitter.com/r_wos) on board. He pointed out a function library that provides this functionality: [igorw/get-in](https://github.com/igorw/get-in).
 
-{% highlight php %}
+{% highlight php startinline %}
 \igorw\get_in($foo, ['bar'], $default);
 {% endhighlight %}
 
@@ -111,7 +111,7 @@ This is clunkier than my ill-conceived PHP version, or the Python version, but i
 
 The use of this function together with anonymous functions also lends itself to creative local solutions:
 
-{% highlight php %}
+{% highlight php startinline %}
 function extractParts(array $data)
 {
     $part = function ($key) use ($data) {
