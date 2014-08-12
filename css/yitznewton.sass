@@ -45,6 +45,8 @@ body
 
   .copyright
     opacity: 0.9
+    font-size: 14px
+    text-align: center
 
 strong, b
   font-weight: 500
@@ -56,11 +58,11 @@ pre, code
   font-family: "Source Code Pro", monospace
 
 a, a:visited
-  color: #707070
+  color: #000
   text-decoration: none
 
 a:hover
-  opacity: 0.6
+  opacity: 0.4
   text-decoration: none
 
 .site-nav .page-link
@@ -76,6 +78,7 @@ a:hover
 
   .post-link
     @include bitter
+    color: $body_color
     display: block
     margin: 4px 0 8px
 
@@ -96,6 +99,10 @@ a:hover
 
 address
   font-style: normal
+
+.post-header h1
+  font-size: 38px
+  line-height: 1.2em
 
 .post-content
   h2
@@ -119,6 +126,12 @@ header.resume
     font-size: 20px
     margin: 0
     padding: 0
+
+.home .about
+  margin: 0 0 38px
+  border-top: 1px solid #909090
+  padding: 6px 0 0
+  font-style: italic
 
 .tag-index
   h2
@@ -150,6 +163,10 @@ header.resume
     li
       border-left: none
       padding: 0 10px
+
+@media screen and (max-width: 750px)
+  .site-footer .copyright
+    text-align: left
 
 @media screen and (max-width: 600px)
   .site-name .page-link
