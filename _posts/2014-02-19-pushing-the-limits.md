@@ -8,8 +8,6 @@ status: publish
 type: post
 published: true
 ---
-# Pushing the limits of metaprogramming in PHP: aspect oriented design
-
 I've been doing software for about six years professionally. It was a few years into my career that I first heard about Aspect Oriented design (AOP == Aspect Oriented Programming is your buzzword).
 
 Here's the premise. A given piece of code exists for a certain purpose - let's say, to retrieve a record from a database. But there may be any number of other things that need to happen in addition to the actual retrieval: logging, access control, caching... those are known as *cross-cutting concerns* -- issues that are relevant across the codebase, but are not specifically relevant to any one piece of code where they might be needed. And being that these bits of functionality are not intrinsically connected with data retrieval, in our example, it would make sense for them to be disconnected from the retrieval implementation.
