@@ -7,9 +7,7 @@ layout: default
   <ul class="posts">
     {% for post in site.posts %}
       <li>
-        <div>
-          <time class="post-date">{{ post.date | date: "%b %-d, %Y" }}</time>
-        </div>
+        <time class="post-date">{{ post.date | date: "%b %-d, %Y" }}</time>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         <p>
           {{ post.excerpt | remove: '<p>' | remove: '</p>' }}

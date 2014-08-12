@@ -10,7 +10,7 @@
 
 @mixin inline_list
   li
-    padding: 0 4px
+    padding: 0 0.5em
     margin: 0
     display: inline
     list-style: none
@@ -67,6 +67,13 @@ a:hover
   color: #959ba6
 
 .posts
+  li
+    margin-bottom: 38px 
+
+  .post-date
+    display: block
+    margin: 0 0 7px
+
   .post-link
     @include bitter
     display: block
@@ -74,10 +81,10 @@ a:hover
 
   .post-tags
     @include inline_list
-    margin: 6px 0 0 -4px
+    margin: 8px 0 0 -4px
     width: 95%
     border-top: 1px solid #DDD
-    padding: 4px 0 0
+    padding: 6px 0 0
     font-size: 14px
     text-transform: uppercase
 
