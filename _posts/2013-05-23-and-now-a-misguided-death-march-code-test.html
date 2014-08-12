@@ -1,0 +1,35 @@
+---
+layout: post
+title: And now, a misguided death march code test
+categories: []
+tags:
+- interviewing
+status: publish
+type: post
+published: true
+---
+<p>Following up on my earlier post(s) about interview code tests, I wanted to recount one rather absurd test I once encountered. Well, it was absurd to me, anyway. First, I'll set up some reasonable tests I've taken, for contrast. Both of these were take-home.</p>
+<!-- more -->
+<p>First one. <a href="http://www.cyrusinnovation.com/code-test-ruby/">Here's the spec</a> - basically, use straight Ruby to parse three similar-but-different flat-file data formats, sort various ways, and output in a standard format. I loved this test, had a lot of fun with it. Open-ended without being huge in scope. Interesting and realistic problem. I liked working on it, and was pleased with my solution.</p>
+
+<p>Second one. Within a 4.5 hour block of time, replicate as much functionality of Twitter as possible. There were specific guidelines as to desirable features. Zend was given as a preferred framework, but that was optional, and I opted for a framework I had more experience with. It was a bit of a grind with that time constraint, and I just finished enough of the app in that time to make me satisfied that it was a fulfillment of the spec, but without any test coverage :( . I thought it was a little too large for a code test, but it was an awesome position, and it wasn't outrageous, so I did it and enjoyed the challenge.</p>
+
+<p>Both of these were construction exercises, as opposed to the common Q&amp;A-type code tests, where you identify what's wrong, or write the SQL schema for the database backing a certain kind of app, etc. Not only was I able to pick the dev environment, I used my own everyday workstation. I approve of this style of test, and I liked both of these projects.</p>
+
+<p>Now onto the subject of today's post. This was my first direct contact with the employer. I was told by the recruiter to expect a test of "a few hours" where I would be building a photo-hosting app. Sounds great. After arriving at the office, I was given the spec to look over before sitting down at the workstation. I would have up to 8 hours to build the app: from scratch. Raw PHP. No frameworks or external libraries whatsoever. What. The. Heck are you talking about.</p>
+
+<p>The obliging staffer brought me to a room where a few devs were working, and sat me down at a nice little Dell laptop, where PHPMyAdmin and NetBeans were running on Windows 7. "So you'll be writing this in object-oriented PHP. You know object-oriented, right?" <em>facepalm</em> duuhhhhh... thanks for looking at my code samples, guys. Anyway.</p>
+
+<p>I'm a command-line guy. I use command-line Git, I run SQL in the MySQL console or by doing <code>mysql my_db &lt; schema.sql</code>, Vim is my editor of choice, my laptop runs Linux... you get the idea. So I'm sitting in front of a nice little computer, running an OS I haven't developed on in 4-5 years or something. I have none of my usual tools; the spec calls for the use of any editor, but I can't seem to get Vim set up quickly, and I don't want to start futzing around with Cygwin, so I just open Notepad++, which is what I used back in the day. After a few minutes of poking and asking for help, I'm able to get a Git console open and initiate a repo. I write the initial SQL schema, but there doesn't seem to be a command-line MySQL client on this box, and it takes me a few minutes to use PHPMyAdmin to get the thing loaded into MySQL. And what is this "mouse" thing, anyway?</p>
+
+<p>So far an utterly disorienting experience. I feel like I have several fingers cut off. But I have yet to realize the magnitude of the true fail here.</p>
+
+<p>I start thinking about how to architect this thing. I create a directory skeleton with controllers and views, and start writing the templates. I stub in some form helpers in the homepage view to create the registration form. And it's around this time that it hits me.</p>
+
+<p>The spec says that this is meant to simulate day-to-day operations working at this company. Day-to-day operations? Building a pedestrian two-table PHP application from scratch, from the ground up in raw PHP? A dev would have to be plain stupid to do that today. Frameworks exist for a reason, and that reason is exactly the domain of this assignment. If I were interviewing for a team that develops frameworks, I would expect an assignment like this, but not for a shop that builds apps.</p>
+
+<p>There were only two routes to success in this test. The first, which is the approach I began with, was to write a framework from the ground up. I quickly realized that this was impractical in eight hours, and also a fool's errand and irrelevant. The impetus to write my very first scripts at my old job years ago was to eliminate superfluous work; here was a case of reinventing a wheel that's been done dozens of times already. The second, which I briefly considered, was to write the thing without MVC or similar architecture: just a collection of scripts. And that's just not me.</p>
+
+<p>It was clear to me, at about the 15 minute mark, that I was not prepared to accept the idea of doing it either of these two ways. So I walked out of an interview for the first time.</p>
+
+<p>There's not much more to say. Except, between obnoxious crunching of apples and making an entrance with a pizza, I overheard two of the devs troubleshooting a project. There was some problem with an SVN lock file. To which I say... <a href="http://wheningit.tumblr.com/post/35621061440/when-a-prospective-employer-says-they-use-svn-rather"><span>http://wheningit.tumblr.com/post/35621061440/when-a-prospective-employer-says-they-use-svn-rather</span></a></p>

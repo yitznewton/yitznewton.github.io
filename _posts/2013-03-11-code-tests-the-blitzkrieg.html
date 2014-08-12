@@ -1,0 +1,21 @@
+---
+layout: post
+title: 'Code tests: The Blitzkrieg'
+categories: []
+tags:
+- interviewing
+status: publish
+type: post
+published: true
+---
+<p>I've done some interviewing of late, and one of the most interesting parts of it for me is the code test. I've experienced a variety, and would like to share some. I'll start with the one I call <em>Der Blitzkrieg</em>.</p>
+<!-- more -->
+<p>You get a certain number of hours. Your mission: recreate Popular Social Network X on our platform. No provision of any templates or comps, just some general guidelines of features that we'd like to see.</p>
+
+<p>When I got this assignment, I didn't know quite what to think of it. There's no way a dev could reproduce Site X with any degree of quality in that number of hours. Heck, I would take longer than that just to think about code design, let alone work out templates or actually code the thing.</p>
+
+<p>But hey, I thought, let's rumble and see what happens. The prospective employer was ideally looking for a particular PHP framework that I don't have any experience with. Given the nature of the project, I opted for Symfony 1, which I have the most experience with.</p>
+
+<p>With this deadline I didn't even bother writing any sort of tests, and basically just hammered out a data schema and rolled from there. The app grew organically out of the schema, without any real time to plan. I was able to leverage community plugins to implement user auth, and Gravatar integration (which apparently, Zend 2 offers out of the box [!]).</p>
+
+<p>I didn't really see the value of this test. What it did demonstrate was that I was sufficiently familiar with web development and RAD frameworks to punch out something functional in a RDBMS-based MVC design in a few hours. But it certainly didn't in any way measure attention to detail, robustness, quality of code and design, and so on.</p>

@@ -1,0 +1,44 @@
+---
+layout: post
+title: Cramming too much into a single line of code
+categories: []
+tags:
+- clean code
+status: publish
+type: post
+published: true
+---
+<p>So I was pairing in legacy code, and we hit the following block of code:</p>
+
+{% highlight php startinline %}
+$a_keys = array_merge(
+    ($a1 = $a->plan_ext_assoc_facility_id) ? $a1->data() : array(),
+    ($a2 = $a->location_ext_local_facility_id) ? $a2->data(): array()
+);
+{% endhighlight %}
+
+
+<p>In lines 2 and 3, at a glance it seemed as if it was assigning <code>$a1</code> based on the result of the ternary expression, but using <code>$a1</code> within the expression itself. <!-- more -->After much WTF'ing and headscratching, we finally git blame'd the code and tracked down the author of this 9-month-old code (which blessedly took less than a minute).</p>
+
+<p>It turns out that we were not visually parsing the parentheses around the <code>$a1</code> assignment, and missing the context of the <code>array_merge</code> call. At the end of the day, the line of code:</p>
+
+<ol>
+<li>Assigns a value to <code>$a1</code></li>
+<li>Checks <code>$a1</code> for truthiness</li>
+<li>Returns that value or an empty array based on the check</li>
+</ol>
+
+<p>Moral of the story: don't try to do too much in a single line of code. The ternary operator is a prime offender here. The reworked version, which was anyway pulled into a smaller method:</p>
+
+{% highlight php startinline %}
+public function fooBarBaz(Entity $entity)
+{
+    $planKeys = $entity->plan_ext_assoc_facility_id;
+    $locationKeys = $entity->location_ext_local_facility_id;
+
+    return array_merge(
+        $planKeys ? $planKeys->data() : array(),
+        $locationKeys ? $locationKeys->data() : array()
+    );
+}
+{% endhighlight %}

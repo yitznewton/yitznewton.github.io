@@ -1,0 +1,24 @@
+---
+layout: post
+title: Edge-case web application disasters
+tags:
+  - PHP
+  - SOAP
+status: publish
+type: post
+published: true
+---
+<p>I finally had my first real perfect storm disaster last week: when new
+features, late changes, imperfect test environments and core server library
+regressions combine to nuke a feature on a production web app.<!-- more --> Thankfully this
+feature only sees a handful of requests per month!</p>
+
+<p>The application in question was built for a client, and utilizes SOAP over HTTPS to communicate with a data service in their datacenter. We have been using the PHP SOAP extension successfully since the product debuted over a year ago. As part of the new blockbuster release that has been under development since August, we also have a new feature where we use cURL to request a page from the app to pass through wkhtmltopdf.</p>
+
+<p>The ominous music begins with the fact that, in our test environments, we generally use HTTP, whereas in production, all requests are forced to HTTPS. We had been cURLing over HTTP, which was no longer an option. If I recall correctly, when we started smoke testing the staging and production servers early in the week of our Thursday release, we discovered that this process required installation of the openssl-devel RPM package. Because our openssl package was out of date (1.0.0 vs. 1.0.1e), that had to be updated too.</p>
+
+<p>Well, it turns out that this version of OpenSSL <a href="https://www.google.com/search?q=SSL3_GET_RECORD%3Adecryption+failed+or+bad+record+mac">contained a regression</a> which <a href="http://stackoverflow.com/questions/18344899/error-consuming-web-service-soapclient-ssl-operation-failed-with-code-1">broke PHP's implementation of SOAP</a>. Apparently no one on our side or the client's side tested this in staging between the package update and the production deploy, and the issue was only discovered after we deployed to production. We were stuck with the updated OpenSSL with no easy way to revert to a working version.</p>
+
+<p>After some wild goose chases over outdated WSDL files and mismatched SSL certificates, we finally came to terms with the fact that this was actually the problem, and crafted a workaround: reimplement the <code>__doRequest()</code> method of PHP's <code>SoapClient</code> with cURL wrapped in Guzzle. For whatever reason, cURL was still able to make successful requests. We also had to store the WSDL locally, since as far as I know, PHP does not offer the same override ability for WSDL retrieval as it does for the actual SOAP request and response.</p>
+
+<p>So what to take away from this? I can't point to a single point of failure that is out of line with our current testing practices. We were totally blindsided by a known but probably seldom-encountered regression in a core server library. The only way I can see to avoid this sort of issue in the future is to tighten our control of server environments: assert more equivalence across environments with things like how we are using HTTPS. Use Puppet or similar configuration tools to assert that environments really are the same. Keep server libraries routinely up to date, testing updates first in a staging environment. More rigorous testing and control are the only way to avoid these problems.</p>

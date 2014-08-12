@@ -2,80 +2,145 @@
 ---
 
 @mixin bitter
-    font-family: Bitter, serif
+  font-family: Bitter, serif
 
 @mixin roboto
-    font-family: Roboto, sans-serif
-    font-weight: 300
+  font-family: Roboto, sans-serif
+  font-weight: 300
+
+@mixin inline_list
+  li
+    padding: 0 4px
+    margin: 0
+    display: inline
+    list-style: none
+    border-left: 1px solid $body_color
+
+    &:first-child
+      border-left: none
+
+$body_color: #707070
 
 body
-    color: #707070
-    @include roboto
+  color: $body_color
+  @include roboto
 
 .site-header, .site-footer
-    background: #515865
-    color: #FFF
+  background: #515865
+  color: #FFF
     
-    .site-title
-        color: #FFF
-        opacity: 0.8
-        @include bitter
+  .site-title
+    color: #FFF
+    opacity: 0.8
+    @include bitter
 
 .site-footer
-    li, p, a, a:visited
-        color: #FFF
-        opacity: 0.9
+  li, p, a, a:visited
+    color: #FFF
+    opacity: 0.9
 
-    .footer-heading
-        color: #FFF
-        opacity: 0.9
+  .footer-heading
+    color: #FFF
+    opacity: 0.9
+
+strong, b
+  font-weight: 500
 
 h1, h2, h3
-    @include bitter
+  @include bitter
 
 pre, code
-    font-family: "Source Code Pro", monospace
+  font-family: "Source Code Pro", monospace
 
 a, a:visited
-    color: #707070
-    text-decoration: none
+  color: #707070
+  text-decoration: none
 
 a:hover
-    opacity: 0.6
-    text-decoration: none
+  opacity: 0.6
+  text-decoration: none
 
 .site-nav .page-link
-    color: #959ba6
+  color: #959ba6
 
-.posts .post-link
+.posts
+  .post-link
     @include bitter
+    display: block
+    margin: 4px 0 8px
+
+  .post-tags
+    @include inline_list
+    margin: 6px 0 0 -4px
+    width: 95%
+    border-top: 1px solid #DDD
+    padding: 4px 0 0
+    font-size: 14px
+    text-transform: uppercase
+
+  .more
+    margin: 0 0 0 6px
+    font-size: 80%
+    &::after
+      content: " »"
 
 address
-    font-style: normal
+  font-style: normal
 
 .post-content
-    h2
-        font-size: 30px
-        margin: 40px 0 10px
+  h2
+    font-size: 30px
+    margin: 40px 0 10px
 
-    h3
-        font-size: 22px
-        margin: 40px 0 10px
+  h3
+    font-size: 22px
+    margin: 40px 0 10px
 
-    h4
-        margin: 20px 0 10px
+  h4
+    margin: 20px 0 10px
 
 header.resume
-    h1
-        font-size: 28px
-        margin: 0 0 8px
-        padding: 0
-    h2
-        font-size: 20px
-        margin: 0
-        padding: 0
+  h1
+    font-size: 28px
+    margin: 0 0 8px
+    padding: 0
+
+  h2
+    font-size: 20px
+    margin: 0
+    padding: 0
+
+.tag-index
+  h2
+    font-size: 30px
+    margin: 40px 0 10px
+
+  h3
+    font-size: 22px
+    margin: 40px 0 10px
+
+  h4
+    margin: 20px 0 10px
+
+  .archive-list
+    padding: 0
+    margin: 0
+
+    li
+      list-style: none
+      clear: both
+
+    time
+      display: block
+      width: 100px
+      float: left
+
+  .tag-list
+    @include inline_list
+    li
+      border-left: none
+      padding: 0 10px
 
 @media screen and (max-width: 600px)
-    .site-name .page-link
-        color: #707070
-
+  .site-name .page-link
+    color: #707070

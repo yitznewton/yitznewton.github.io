@@ -1,0 +1,30 @@
+---
+layout: post
+title: 'Refactor kickoff: code structure mirrors team structure'
+categories: []
+tags:
+- refactoring
+status: publish
+type: post
+published: true
+---
+<p>After quite a span of humdrum maintenance work, I recently undertook and am
+wrapping up a multi-week refactoring project. The product (web app,
+PHP/Lithium) has been about half my focus over the past year, so I know the
+overall structure, etc. We are doing some major extensions to the
+functionality. The novelty here is that I am now working with the half of the
+codebase that I had not so much as touched until now. We'll call my part of the
+app "provider finder," and the new-to-me part "cost estimator." <!-- more -->You'll get to
+know them better as we go on.</p>
+
+<p>I'm really excited to be writing about it, because this project has constantly invoked things I've learned from reading the classics of software construction over the past year, particularly <a href="http://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670">Code Complete</a> and <a href="http://www.amazon.com/Software-Development-Principles-Patterns-Practices/dp/0135974445">Uncle Bob's PPP book</a> (both of which are fabulous books, BTW). The principles I've seen most saliently emerge have been Single Responsibility and Dependency Inversion, but there's so much to write about.</p>
+
+<p>It's killing me I can't remember who, but one of my Twitter gurus tweeted something to the effect of this: if you have multiple teams working on different parts of a system, the structure of the system is going to end up looking like the structure of the team(s) who created it.</p>
+
+<p><img src="http://yitznewton.org/blog/wp-content/uploads/2013/10/dogwoman-300x187.jpg" alt="Woman looking like her dog" width="300" height="187" class="alignnone size-medium wp-image-40" /></p>
+
+<p>This project is a wonderful example of this; you could see a very visible fissure between this feature and the rest of the app.</p>
+
+<p>Nowhere was this more apparent than in the code concerning user data and session state: the provider finder had its own set of classes representing users and their state (<code>Persona</code>), and the cost estimator had its own <code>User</code> class which was composed by <code>Persona</code>, and held its own cost-estimator-specific state. Aside from composition in <code>Persona</code>, it was also a quasi-singleton which could be called from code that knew nothing about <code>Persona</code>.</p>
+
+<p>A noticeable side effect of my activities in this refactor was the elimination of <code>User</code>, as I blended its responsibilities into other appropriate areas of the app.</p>

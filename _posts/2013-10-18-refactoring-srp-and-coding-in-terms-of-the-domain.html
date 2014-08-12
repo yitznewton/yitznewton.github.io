@@ -1,0 +1,99 @@
+---
+layout: post
+title: 'Refactoring: SRP and coding in terms of the domain'
+categories: []
+tags:
+- OOP
+- refactoring
+- SOLID
+status: publish
+type: post
+published: true
+---
+<p>As I first moved into the medical benefit/procedure cost module I would be taking responsibility for, I tried to get a sense of how the parts worked together. I found that the boundaries between the responsibilities were not always cleanly defined. There were also a number of cases where a single class was responsible for different levels of a certain operation.</p>
+<!-- more -->
+<p>I noticed that there were also a lot of things named for the implementation used.</p>
+
+<p>Here's the business model: members of an insurance plan have benefit-related data, such as deductible and how much of the deductible remains. Providers perform particular procedures and bill at particular costs. Members have particular benefits for a given procedure, such as copayment and coinsurance rates. All these combine to yield the member's personal cost responsibility for the procedure.</p>
+
+<p>Here is a breakdown of some of the class responsibilities:</p>
+
+<p>CostCalculator</p>
+
+<ul>
+<li>calculate a member's remaining deductible and out-of-pocket limits</li>
+<li>calculate coinsurance amounts for a procedure</li>
+<li>determine whether to use a member's family or individual benefits in calculations</li>
+<li>calculate final out-of-pocket cost of a procedure</li>
+</ul>
+
+<p>ProcedureModel</p>
+
+<ul>
+<li>return a list of all available procedures: name, description, and the factors for determining benefits</li>
+<li>manage the parsing of sets of <a href="http://google.com?q=EDI+271">EDI 271</a> benefit data payloads</li>
+<li>parse EDI payload for member benefit values</li>
+<li>parse EDI payload for member network</li>
+</ul>
+
+<p>FooSearch (name of class obfuscated here)</p>
+
+<ul>
+<li>initiate call to client's procedure cost search service (proxied by Bar)</li>
+<li>clean up cost search response</li>
+<li>cache cleaned-up cost search response</li>
+<li>act as Facade for CostCalculator</li>
+</ul>
+
+<p>BarDataService (obfuscated)</p>
+
+<ul>
+<li>Facade between FooSearch and BarDataServiceCall </li>
+</ul>
+
+<p>BarDataServiceCall</p>
+
+<ul>
+<li>SOAP class that actually performs the operation and returns a model object in the web framework we are using</li>
+</ul>
+
+<p>UserBenefits</p>
+
+<ul>
+<li>maintain a quasi-singleton instance of ProcedureModel</li>
+<li>execute a one-to-many mapping of certain procedure benefit rule flags</li>
+<li>determine EDI calls necessary for a given procedure</li>
+<li>initiate calls to client's EDI service</li>
+<li>act as Facade to ProcedureModel for procedure name, description, and benefits</li>
+</ul>
+
+<p>User</p>
+
+<ul>
+<li>determine whether a member has logged in based on SSO parameters</li>
+<li>parse SSO parameters</li>
+<li>cache procedure cost search results</li>
+<li>track session state</li>
+<li>log out/destroy session</li>
+<li>store and parse user data (name, member ID)</li>
+<li>act as Facade to UserBenefits for procedure name, description, and benefits (that's two levels of Facade)</li>
+</ul>
+
+<p>One of the five SOLID principles is <a href="http://en.wikipedia.org/wiki/Single_responsibility_principle">Single Responsibility (SRP)</a>: a class should have a single resposibility, which should be entirely encapsulated by the class. As you can see there are many responsibilities here that do not conform to the SRP. <a href="http://www.8thlight.com/our-team/robert-martin">Uncle Bob</a>'s official justification for SRP is that it narrows the scope of changes when they occur; but for me the main benefit of SRP is in managing complexity of the domain in general. When each class "does one thing," that means that it's easier to form a mental concept of the domain and how it is being handled by the system. It's also less risky to make modifications to the business domain, since a given class is designed to have a recognized and discrete behavior.</p>
+
+<p>A corollary to this is the convention of Programming in Terms of the Problem Domain, as described by Steve McConnell in his Code Complete (Chapter 34). One of the core concepts of OOP is using abstractions to defer and isolate complexities, so it is only natural that names and structures in an OOP system should be top-down abstractions, rather than referring to implementation. In other words, the name should reflect <em>what</em> the class represents, not <em>how.</em></p>
+
+<p>For example, "CostCalculator" is implementation. Instead, I envisioned classes <code>MemberBenefits</code>, <code>FacilityProcedureCosts</code>, and <code>ProcedureMemberCosts</code> which would interact to eventually produce the member's final procedure cost. The calculations to get there would live in the appropriate classes, not have a class of their own. This also means that testing and stubbing is easy.</p>
+
+<p>As it happens, these classes did in fact provide my way forward, and in the end they were split into even more parts to constitue the core domain model as follows. The road there was fascinating, and I look forward to elaborating in upcoming posts.</p>
+
+<ul>
+<li>Member</li>
+<li>MemberInfo</li>
+<li>MemberBenefits (or MemberCoverage)</li>
+<li>Procedure</li>
+<li>ProviderProcedureCosts</li>
+<li>ServiceTypeBenefits (where each Procedure has one or more service types)</li>
+<li>MemberProcedureBenefits (or MemberProcedureCoverage)</li>
+<li>MemberProcedureCosts</li>
+</ul>

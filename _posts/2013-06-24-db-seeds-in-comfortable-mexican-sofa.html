@@ -1,0 +1,55 @@
+---
+layout: post
+title: DB Seeds in Comfortable Mexican Sofa
+categories: []
+tags:
+- CMS
+- Rails
+status: publish
+type: post
+published: true
+---
+<p>I just found a most awesome Rails CMS called Comfortable Mexican Sofa. The name is annoyingly long, but it's exactly what I was looking for: a light CMS for Rails with an extensible admin UI that can be fitted on existing models. I want to write up my discovery, but in the meantime, here's the resolution of an initial roadblock I ran into.</p>
+<!-- more -->
+<p>I have one of my standard AR models tied into Sofa's site and category taxonomies. I spent a couple of hours banging my head against trying to write database seeds for these relationships. In the end, it was just a matter of reverse-engineering the Sofa is_categorized models. Here's my seed file, Sponsorship being my custom model.</p>
+
+<pre><code>pti_site = Cms::Site.create!(
+  identifier: "yeshiva-pti",
+  label: "Yeshiva PTI",
+  hostname: "localhost",
+  path: "",
+  locale: "en",
+  is_mirrored: false,
+)
+
+standard_sponsorship_category = 
+  pti_site.categories.create!(
+    label: "Standard",
+    categorized_type: "Sponsorship",
+  )
+
+sponsorships = Sponsorship.create!([
+  {
+    name: "Week of Learning",
+    amount: 1000,
+  },
+  {
+    name: "Three Days of Learning",
+    amount: 720,
+  },
+  {
+    name: "One Day of Learning",
+    amount: 360,
+  },
+  {
+    name: "One Night Seder",
+    amount: 120,
+  },
+])
+
+sponsorships.each do |sponsorship|
+  standard_sponsorship_category.categorizations.create!(
+    categorized: sponsorship
+  )
+end
+</code></pre>

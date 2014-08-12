@@ -1,0 +1,41 @@
+---
+layout: post
+title: I'll tell you what I want, what I really, really want... in a CMS
+categories: []
+tags:
+- cms
+- rails
+status: publish
+type: post
+published: true
+---
+<p>I'm a backend developer, I've chosen MVC frameworks as my way of doing things. I recently began working with my first freelance client on a project somewhere between brochure site and full-on e-commerce. So naturally, I started thinking about the domain in terms of models, how those models would interact, and how I would construct views for them.</p>
+<!-- more -->
+<p>In addition to the model-y side of things, I want the client to be able to CRUD the models, obviously, but also to be able to edit the display of items, add regions to the page, customize existing regions, etc. I want to offer a rich-text editing view that will allow the client to use a developer-configurable subset of HTML in doing customization, and allow for some site configuration (title, analytics key) via the admin interface.</p>
+
+<p>So where's the CMS that will allow me to do this?! It doesn't seem like such a big deal: a Rails app (or Laravel/CodeIgniter/whatever) with the addition of a well-designed admin with CRUD for specified models, plus views and/or partials stored in the database that can replace or supplement the hard-coded ones. Does this really not exist already? All the sufficiently mature CMS's that I've seen have offered a different model.</p>
+
+<p>Which ones, you ask? Here are the ones I considered seriously:</p>
+
+<ul>
+    <li>
+      Refinery (Rails)
+    </li>
+    <li>
+      Django CMS
+    </li>
+    <li>
+      CMF (Symfony 2)
+    </li>
+    <li>
+      FUEL CMS (CodeIgniter)
+    </li>
+  </ul>
+
+<p>As far as I can tell, Refinery's architecture is too far removed from plain Rails; there are far more assumptions than I want. I couldn't figure out in five minutes how to specify my own layout, and that's a bad sign.</p>
+
+<p>The UI for CMF seemed too barebones, and anyway the documentation links were broken. When I try the Django CMS demo, I get an error that their demo farm is full. Hmm, looking at their docs I think it's worth trying an installation. FUEL CMS actually looks the most promising at this point. Checking it out is my next stop.</p>
+
+<p>Failing that, it looks like I'll be driven to create YACMS in Rails. smh.</p>
+
+<p><strong>UPDATE 2013 June 20 15:09 ET:</strong> This just in, I discovered <a href="https://github.com/comfy/comfortable-mexican-sofa">Comfy</a> via a Stack question, and it very well might turn out to be what I'm looking for.</p>
