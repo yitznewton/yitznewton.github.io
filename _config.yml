@@ -1,0 +1,13 @@
+# Site settings
+title: Braindump ← Yitz
+author: Yitzchak Schaffer
+email: yitzchak.schaffer@gmail.com
+description: "Here I talk about stuff from my journeys in software."
+baseurl: ""
+url: "http://yitznewton.org"
+twitter_username: YitzOfTheBits
+github_username:  yitznewton
+
+# Build settings
+markdown: kramdown
+permalink: pretty

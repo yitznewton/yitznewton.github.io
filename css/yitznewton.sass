@@ -1,0 +1,81 @@
+---
+---
+
+@mixin bitter
+    font-family: Bitter, serif
+
+@mixin roboto
+    font-family: Roboto, sans-serif
+    font-weight: 300
+
+body
+    color: #707070
+    @include roboto
+
+.site-header, .site-footer
+    background: #515865
+    color: #FFF
+    
+    .site-title
+        color: #FFF
+        opacity: 0.8
+        @include bitter
+
+.site-footer
+    li, p, a, a:visited
+        color: #FFF
+        opacity: 0.9
+
+    .footer-heading
+        color: #FFF
+        opacity: 0.9
+
+h1, h2, h3
+    @include bitter
+
+pre, code
+    font-family: "Source Code Pro", monospace
+
+a, a:visited
+    color: #707070
+    text-decoration: none
+
+a:hover
+    opacity: 0.6
+    text-decoration: none
+
+.site-nav .page-link
+    color: #959ba6
+
+.posts .post-link
+    @include bitter
+
+address
+    font-style: normal
+
+.post-content
+    h2
+        font-size: 30px
+        margin: 40px 0 10px
+
+    h3
+        font-size: 22px
+        margin: 40px 0 10px
+
+    h4
+        margin: 20px 0 10px
+
+header.resume
+    h1
+        font-size: 28px
+        margin: 0 0 8px
+        padding: 0
+    h2
+        font-size: 20px
+        margin: 0
+        padding: 0
+
+@media screen and (max-width: 600px)
+    .site-name .page-link
+        color: #707070
+
