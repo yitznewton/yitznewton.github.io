@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<div class="tag-page">
+  <h2>Posts tagged "{{ page.tag }}"</h2>
+  <ul class="posts">
+  {% for post in page.posts %}
+    {% include posts_item.html %}
+  {% endfor %}
+  </ul>
+</div>
