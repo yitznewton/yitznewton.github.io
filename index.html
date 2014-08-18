@@ -10,6 +10,10 @@ layout: default
     is my stack. Here, I talk about stuff from my journeys in software.</p>
   </header>
 
+  <div class="tag-cloud">
+    {{ site | tag_cloud }}
+  </div>
+
   <ul class="posts">
     {% for post in paginator.posts %}
       {% include posts_item.html %}
