@@ -20,7 +20,7 @@ and have gone through the novice lessons a few times. I still haven't graduated 
 
 The problem: we need to collapse a list of strings by interposing a delimiter, the classic sort of `implode()` operation. But not all cases get the delimiter. The actual application we are building allows for different rules, but let's treat the "no-Oxford-comma" case for the purposes of this blog post.
 
-{% highlight php startofline %}
+{% highlight php startinline %}
 class RenderDelimitedTest extends \PHPUnit_Framework_TestCase
 {
     public function data()
@@ -111,7 +111,7 @@ I've applied **recursion** to build the full string. Where there are three or mo
 
 PHP obviously doesn't support pattern matching in this way, but we can do the same thing with explicit conditionals. Use of the `implode()` function allows us to merge the `1` and `2` cases.
 
-{% highlight php startofline %}
+{% highlight php startinline %}
 /**
  * @param array $strings 
  * @return string
