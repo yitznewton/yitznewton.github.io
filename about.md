@@ -4,6 +4,8 @@ title: About me
 permalink: /about/
 ---
 
+![Yitz's pic]({{ site.baseurl }}/assets/yitz.jpg)
+
 I'm Yitzchak Schaffer; I do software in New York City and Northern New
 Jersey.  I started out in education because of the tremendous potential to
 help people gain knowledge and core skills. After finding software development
