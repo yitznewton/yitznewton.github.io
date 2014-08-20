@@ -11,7 +11,7 @@ excerpt_separator: <!-- more -->
 paginate: 10
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
 permalink: pretty
 
 tag_page_layout: tag_page
