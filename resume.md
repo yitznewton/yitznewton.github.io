@@ -19,10 +19,9 @@ permalink: /résumé/
 \| [@YitzOfTheBits](http://twitter.com/YitzOfTheBits)
 \| [http://YitzOfTheBits.com/](http://yitzofthebits.com)
 
-I started out in education because of the tremendous potential to help people gain knowledge and core skills. After finding software development and falling in love with it, I have sought out the best opportunities to build wonderful products, and grow as an individual and a developer. Given my commitment to my family, I want to work in the New York metro area or telecommute.
+I started out in education because of the tremendous potential to help people gain knowledge and core skills. After finding software development and falling in love with it, I have sought the best opportunities to build wonderful products, and grow as a human and a builder of software. Given my commitment to my family, I want to work in the New York metro area.
 
-I'm looking to join a mature team in a role that will challenge me with responsibility. In addition to product development, I love working with rich datasets. I value web standards, and quality code and process; Uncle Bob Martin's take on Agile Software Development resonates for me. I’m especially at home in the education and B2B spaces because of the great value they present for individuals and organizations.
-
+I'm looking to join a team of mature professionals in a role that will challenge me with technical leadership responsibility. I value communication, humility, and feedback. Extreme Programming and Uncle Bob Martin's principles and techniques are the basis for my approach to software development. In addition to product development, I love working with rich datasets.
 
 ## Skills
 
@@ -33,6 +32,10 @@ I'm looking to join a mature team in a role that will challenge me with responsi
   * JavaScript: plain vanilla, jQuery/jQueryUI
   * HTML5, CSS3/Sass, ZURB Foundation, SQL, MongoDB 
   * Git 
+* 2 years leading software teams
+  * Mentorship-pairing with other developers
+  * Tuning process with Project Managers and other stakeholders
+  * Giving and organizing tech talks
 * 4 years administering Linux webservers
   * Apache web server, nginx 
   * Puppet 
