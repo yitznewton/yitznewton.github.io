@@ -66,7 +66,7 @@ to find any examples of this mode of decoupled design on the webz.
 
 With some JavaScript help from my colleague Cameron, I was able to pull together
 a solution over the course of a couple days of intermittent experimentation.
-Notice how the domain code (the "notecard/provider" module) has no knowledge of
+Notice how the domain code (the "trelloboard/repository" module) has no knowledge of
 Angular.
 
 Our example application is a [Trello](http://trello.com) clone. I've
