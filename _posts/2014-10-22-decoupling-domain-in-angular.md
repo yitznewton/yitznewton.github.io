@@ -21,7 +21,7 @@ an application, such as
 
 * business logic
 * frameworks (integration with HTTP, etc.)
-* persistence abstraction and its implementation (databases, etc.)
+* object storage (database abstraction layers, etc.)
 
 <!-- more -->
 
@@ -52,7 +52,7 @@ some killer feature that you want to leverage.
 
 Another outcome of having the framework baked into your domain is that you need
 to load the framework in order to run your tests, which can be complicated and
-can also erode performance. In a domain with relatively simple POJSOs and few
+can also erode performance. In a domain with relatively simple POJOs and few
 dependencies, you should be able to run your tests fast and without fanfare.
 
 So how do we break this coupling and allow our domain code to stand on its own
@@ -69,8 +69,13 @@ a solution over the course of a couple days of intermittent experimentation.
 Notice how the domain code (the "notecard/provider" module) has no knowledge of
 Angular.
 
-Here we have a simplistic repository object for a Trello clone. Each `Trelloboard` has
-a number of `CardGroups`. We're using RequireJS for loading.
+Our example application is a [Trello](http://trello.com) clone. I've
+implemented a bare-bones repository object which returns `Trelloboard`
+entities. Presumably it would look them up by ID, but in this naive
+implementation, we're just hardcoding it.
+
+Each `Trelloboard` has a number of `CardGroups`. We're using RequireJS for
+loading.
 
 The test injects the `q` dependency directly into the module, and the Angular
 `services` module wires our module into the framework before the controller
@@ -138,7 +143,7 @@ define(['trelloboard/repository', 'q'], function(TrelloboardRepository, q) {
 ```js
 // trelloboard/services.js
 define([
-  'bootstrap', // our app's main AngularJS bootstrap
+  'app', // the AngularJS kernel
   'trelloboard/repository'
 ], function(
   app,
@@ -153,10 +158,11 @@ define([
 ### Our controller
 
 ```js
-define(['bootstrap', 'trelloboard/services'], function(app) {
+define(['app', 'trelloboard/services'], function(app) {
   'use strict';
 
-  // TrelloboardRepository is magically injected by Angular, now that we've wired it up in trelloboard_services
+  // TrelloboardRepository is magically injected by Angular, now that we've
+  // wired it up in trelloboard_services
   app.controller('TrelloboardIndexController', function($scope, TrelloboardRepository, $stateParams) {
     TrelloboardRepository.find($stateParams.id).then(function(trelloboard) {
       $scope.model = trelloboard;
