@@ -44,7 +44,7 @@ domain, and forever coupling them.**
 
 The domain code should be the most core part of the application; in theory, it
 could exist as part of a Node.js application on a server, or a hypothetical
-Android.js application where Angular would not be used. By introducing Angular
+Android.js (?) application, where Angular would not be used. By introducing Angular
 into your code, you are preventing yourself from ever using it outside of an
 Angular application, in case Angular should ever die, or Ember.js introduce
 some killer feature that you want to leverage.
