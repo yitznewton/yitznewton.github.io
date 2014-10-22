@@ -10,7 +10,11 @@ status: publish
 type: post
 published: true
 ---
-The true focus of this post is how to retrieve given member values of associative arrays in PHP, but it will touch on analagous constructs in other popular languages, namely Java's `Map`, Python's `dict`, Ruby's `Hash`, and Javascript objects.<!-- more --> The operation can be characterized as:
+The true focus of this post is how to retrieve given member values of associative arrays in PHP, but it will touch on analagous constructs in other popular languages, namely Java's `Map`, Python's `dict`, Ruby's `Hash`, and Javascript objects.
+
+<!-- more -->
+
+The operation can be characterized as:
 
 > Given an object **Foo**, if the **Bar** property is set, return that; otherwise return a default value **Default**
 

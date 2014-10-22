@@ -14,13 +14,18 @@ My main production language is PHP. I started dabbling in Haskell a couple of ye
 [great](http://learnyouahaskell.com/)
 [resources](http://www.seas.upenn.edu/~cis194/lectures.html)
 [out there](http://book.realworldhaskell.org/)
-and have gone through the novice lessons a few times. I still haven't graduated to the point of building Real Things in the language; I *have* noticed, however, that exposure to the very different approach and style of Haskell had an immediate broadening effect on my PHP work. <!-- more --> I encountered a great example of that yesterday.
+and have gone through the novice lessons a few times. I still haven't graduated to the point of building Real Things in the language; I *have* noticed, however, that exposure to the very different approach and style of Haskell had an immediate broadening effect on my PHP work.
+
+<!-- more -->
+
+I encountered a great example of that yesterday.
 
 ## Iterating with exceptional cases
 
 The problem: we need to collapse a list of strings by interposing a delimiter, the classic sort of `implode()` operation. But not all cases get the delimiter. The actual application we are building allows for different rules, but let's treat the "no-Oxford-comma" case for the purposes of this blog post.
 
-{% highlight php startinline %}
+```php
+<?php
 class RenderDelimitedTest extends \PHPUnit_Framework_TestCase
 {
     public function data()
@@ -74,7 +79,7 @@ class RenderDelimitedTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, render_delimited($strings));
     }
 }
-{% endhighlight %}
+```
 
 If we were to use a loop for this, each iteration would have to know the context of the looping in order to know whether the delimiter should be added. To me, that is both a potential breeding-ground for bugs, and ugly; I should be able to *declare* the correct rendering for a given segment or combination of segments without reference to segments that I'm not working on.
 
