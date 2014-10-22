@@ -9,7 +9,9 @@ status: publish
 type: post
 published: true
 ---
-I had an immediate negative reaction to the news of Laravel's new Homestead program. <!-- more -->In [their own words](http://laravel.com/docs/homestead?version=4.2#introduction):
+I had an immediate negative reaction to the news of Laravel's new Homestead program.
+
+In [their own words](http://laravel.com/docs/homestead?version=4.2#introduction):
 
 > Laravel Homestead is an official, pre-packaged Vagrant "box" that provides you a wonderful development environment without requiring you to install PHP, a web server, and any other server software on your local machine.
 

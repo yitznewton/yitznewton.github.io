@@ -11,7 +11,11 @@ status: publish
 type: post
 published: true
 ---
-I have been thinking a lot about the best way to implement a realtime collaborative web app. WebSockets is the maturing tech of choice for this, and although there still seem to be some issues in terms of support, things are improving. <!-- more -->Internet Explorer has support as of version 10. Mobile carriers and some institutional firewalls might implement some network-level impediments, but [apparently it's possible to serve WebSockets over port 443 and largely escape this problem](http://blog.hekkers.net/2012/12/09/websockets-and-mobile-network-operators/).
+I have been thinking a lot about the best way to implement a realtime collaborative web app. WebSockets is the maturing tech of choice for this, and although there still seem to be some issues in terms of support, things are improving.
+
+<!-- more -->
+
+Internet Explorer has support as of version 10. Mobile carriers and some institutional firewalls might implement some network-level impediments, but [apparently it's possible to serve WebSockets over port 443 and largely escape this problem](http://blog.hekkers.net/2012/12/09/websockets-and-mobile-network-operators/).
 
 WebSockets inherently offers a two-way connection between a single browser session and the server; the broader context of what other clients might be connected to the application (such as in a collaborative setting) is outside of the scope of WebSockets. There are several solutions already out there for broadcasting across sessions; the most interesting to my mind are
 [Socket.IO](http://socket.io/) (node.js),

@@ -7,7 +7,9 @@ status: publish
 type: post
 published: true
 ---
-This article comes in response to [a critique of TDD](http://dev.imagineeasy.com/post/79356891740/test-driven-development-is-not-the-solution) eloquently advanced by my colleague, [Richard Wossel](http://r-wos.org/). Rather than offer a point-by-point comparison of our perspectives, I am going to paint TDD in a broader context, and I hope that this will clarify its value as I see it. <!-- more -->
+This article comes in response to [a critique of TDD](http://dev.imagineeasy.com/post/79356891740/test-driven-development-is-not-the-solution) eloquently advanced by my colleague, [Richard Wossel](http://r-wos.org/). Rather than offer a point-by-point comparison of our perspectives, I am going to paint TDD in a broader context, and I hope that this will clarify its value as I see it.
+
+<!-- more -->
 
 The most essential aspect of my practice of TDD to me, is that it *works* when I create software in this way. I look at my output, and I see that the quality improves when I test-drive. I have a better understanding of the process and the product. I also prevent myself from introducing bugs, and catch edge cases up front that would have needed post-hoc analysis to identify and correct. My code is better insofar as TDD makes me think more carefully about what I am doing, in order to write correct and comprehensive tests. This alone justifies the practice to me.
 
