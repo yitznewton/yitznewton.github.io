@@ -46,8 +46,7 @@ The domain code should be the most core part of the application; in theory, it
 could exist as part of a Node.js application on a server, or a hypothetical
 Android.js application where Angular would not be used. By introducing Angular
 into your code, you are preventing yourself from ever using it outside of an
-Angular application. Such a coupling would also make it impossible to reuse
-your domain code in e.g. Ember.js, in case Angular should die, or Ember introduce
+Angular application, in case Angular should ever die, or Ember.js introduce
 some killer feature that you want to leverage.
 
 Another outcome of having the framework baked into your domain is that you need
