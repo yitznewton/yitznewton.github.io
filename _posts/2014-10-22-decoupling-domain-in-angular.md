@@ -31,11 +31,11 @@ an application, such as
 
 This predilection led to an acute point of discomfort for me when my team
 began working on a new project in AngularJS. This Model-View-Whatever
-JavaScript framework offers its own dependency injection facility, and in code
-examples, this DI service itself is injected into modules within the
-application, so that they can in turn access their own dependencies.
+JavaScript framework offers its own dependency injection facility, and in
+the code examples I've seen, **this DI service is injected into domain modules,**
+so that they can in turn access their own dependencies.
 
-This is the controversial **Service Locator** pattern, and here has an unfortunate
+This is the controversial **Service Locator** pattern, and here, it has an unfortunate
 result that erodes the Clean Architecture.
 
 **In allowing a business domain module to request its own dependencies via
