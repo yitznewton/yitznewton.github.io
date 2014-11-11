@@ -16,7 +16,7 @@ But how to test your logging? It turns out that this Service Provider includes a
 
 <!-- more -->
 
-The complete sample app for this post is available at https://github.com/yitznewton/silex-log-test
+The complete sample app for this post is [available on GitHub](https://github.com/yitznewton/silex-log-test).
 
 For the purposes of this post, we'll assume you've already set up logging -- you can compare your `composer.json` and bootstrap with the ones in the sample repo. The question is, how to access the logs from your tests.
 
