@@ -50,7 +50,7 @@ When I was at Vitals, I did a lot of work with our PostgreSQL servers in terms o
 
 ### Buzzword time!
 
-#### Things I do
+#### Technologies
 
 * **A lot:** PHP, Ruby, HTML. **Medium:** JavaScript, CSS. **A little:** Java, Python, Haskell.
 * Silex, Symfony, Laravel, Rails, Sinatra.
@@ -62,7 +62,7 @@ When I was at Vitals, I did a lot of work with our PostgreSQL servers in terms o
 * Linux (Ubuntu and CentOS).
 * Puppet, Vagrant.
 
-#### Things I like
+#### Ways of doing stuff
 
 * TDD
 * [Extreme Programming](http://xprogramming.com/what-is-extreme-programming/)
