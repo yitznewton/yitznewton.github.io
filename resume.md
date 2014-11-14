@@ -58,7 +58,7 @@ When I was at Vitals, I did a lot of work with our PostgreSQL servers in terms o
 * PHPUnit, RSpec, Jasmine, Mocha.
 * MySQL, PostgreSQL, MongoDB, Solr.
 * Linux (Ubuntu and CentOS).
-* Puppet.
+* Puppet, Vagrant.
 
 #### Good
 
