@@ -99,6 +99,7 @@ Developed for a tech talk involving Uncle Bob Martin's Clean Architecture and TD
 
 #### Developer / Technical Lead, January 2014-present
 
+* Work with other leads to design new single-page application using AngularJS, Silex, and Socket.io
 * Add features and fixes on Zend Framework 1 application and Silex APIs (EasyBib)
 * Create new supporting libraries for Imagine Easy products
 * Provide mentorship to other developers in coding practice and design
