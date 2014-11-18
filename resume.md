@@ -4,7 +4,7 @@ title: Curriculum Vitæ
 permalink: /resume/
 ---
 
-Hi, I'm Yitz Schaffer. I've been making software since 2008 (about 7 years). I'm [an INTP](http://www.personalitypage.com/INTP.html) and I love discovering new ways to understand people, like personality typology.
+Hi, I'm Yitz Schaffer. I've been making software since 2008 (about 7 years). I'm [an INTP](http://www.truity.com/personality-type/intp) and I love discovering new ways to understand people, like personality typology.
 
 I worked at the [Touro College Libraries](http://www.tourolib.org/) for 9 years, first as a librarian, then as a software developer. I was with [Vitals.com](http://www.vitals.com/) for a year an a half, and I have been with [Imagine Easy Solutions](http://www.imagineeasy.com/) for a year now.
 
