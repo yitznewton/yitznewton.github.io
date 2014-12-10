@@ -20,7 +20,7 @@ As a technical librarian turned developer, my teammates at the Touro College Lib
 
 **Humility, respect, and trust.** It's a little cliché, but Team Geek got this right. Add **communication and feedback**, and you have the raw materials of a functioning team.
 
-For the last two years I've been in roles which required me to guide other developers. I am ready to lead a team of 2-5 dedicated people. Motivational skills are not my forte; I do better **leading enthusiastic people by example and encouragement**, empowering my team to meet and stretch their personal best.
+For the last two years I've been in roles which required me to guide other developers. I love **leading enthusiastic people by example and encouragement**, empowering my team to meet and stretch their personal best.
 
 I've given several **workshops in TDD and Git techniques.**
 
