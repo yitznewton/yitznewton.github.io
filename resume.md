@@ -4,9 +4,13 @@ title: Curriculum Vitæ
 permalink: /resume/
 ---
 
-Hi, I'm Yitz Schaffer. I've been making software since 2008 (about 7 years). I'm [an INTP](http://www.truity.com/personality-type/intp) and I love discovering new ways to understand people, like personality typology.
+Hi, I'm Yitz Schaffer. I've been making software as a developer since 2008 (about 7 years).
 
-I worked at the [Touro College Libraries](http://www.tourolib.org/) for 9 years, first as a librarian, then as a software developer. I was with [Vitals.com](http://www.vitals.com/) for a year an a half, and I have been with [Imagine Easy Solutions](http://www.imagineeasy.com/) for a year now.
+I'm [an INTP](http://www.truity.com/personality-type/intp) and I love discovering new ways to understand people, like personality typology. Being an INTP means thinking in systems, taking in information and perspectives from everywhere to understand the whole, and envisioning the best future based on what is here in the present.
+
+It's that vision that makes me want to **transition to Agile leadership, in a Scrum Master or similar role**. I worked at the [Touro College Libraries](http://www.tourolib.org/) for 9 years, first as a librarian, then as a software developer. I also developed for 1.5 years with [Vitals.com](http://www.vitals.com/), and a year at [Imagine Easy Solutions](http://www.imagineeasy.com/). I have devoted the last four years of my career to learning about and exploring better ways of making software with Agile, and I want to help my next team discover the best way for them. I am looking for a smaller team for my first Agile adventure.
+
+I plan on completing **ScrumMaster certification** in Q1 of 2015 with either Mike Cohn or Joe Little.
 
 Here is what's important to me.
 
@@ -14,7 +18,9 @@ Here is what's important to me.
 
 I've been fortunate: since I was a child, the people I've worked with have **empowered me with trust and responsibility** to do awesome things. When I ran a Staples Copy Center, my managers gave me the latitude to make changes that **made the center work better for customers, and made the team happy.**
 
-As a technical librarian turned developer, my teammates at the Touro College Libraries recognized the **amazing ways I was able to empower the library using software**, and allowed me to devote lots of time to honing those skills. As a result, we delivered products that enhanced the prestige of the library within the College and the greater community, and which they continue to use throughout every day, years later.
+As a technical librarian turned developer, my teammates at the Touro College Libraries recognized the **amazing ways I was able to enable the library using software**, and allowed me to devote lots of time to honing those skills. As a result, we delivered products that enhanced the prestige of the library within the College and the greater community, and which they continue to use throughout every day, years later.
+
+I want to use this autonomy to unleash my team to experiment and find the best ways for them to make software.
 
 ## Community and Leadership
 
@@ -28,21 +34,19 @@ I've given several **workshops in TDD and Git techniques.**
 
 I gravitate toward products with **deep human value**; my career so far has been focused on education and consumer health tools. This is important to me, but I also acknowledge that as a software professional, the craft of making software has a significance of its own, and I want to learn from masters. I love **working with rich data.** I'm open to joining any sort of team, be it a team building its own product, or a consulting group.
 
-## TDD
+## Agile engineering practices
 
-I use Test-Driven Development, and want to work with others who also have a **strong practice of TDD.**
+I have a **strong practice of Test-Driven Development,** and would be happy to champion TDD in my next team. I've been experimenting with pairing for about two years, and it continues to grow on me. I know I would *not* be comfortable pairing all day, and I certainly would not force it on anyone, but I definitely want to **strongly encourage pair programming.**
 
-## Pair Programming
-
-I've been experimenting with pairing for about two years, and it continues to grow on me. I'm not at the point where I know I would be comfortable pairing all day, but I definitely want to continue **increasing my pairing practice.**
+I advocate **incremental and emergent design** coupled with **relentless refactoring**. I am a pretty **ardent Uncle Bob-ist.** I love his books and videos; his principles and techniques form the backbone of the way I approach software. I'd love to join others who share this perspective.
 
 ## Colocation
 
 My ideal is to have the **whole team sitting together in the same space**, including the product owner. I've also worked successfully in distributed scenarios, when I was at Touro, and also during Hurricane Sandy, when the Vitals office was closed for about a week.
 
-## Other XP stuff
+## Scrum experience
 
-I am a pretty **ardent Uncle Bob-ist.** I love his books and videos; his principles and techniques form the backbone of the way I approach software. I'd love to join others who share this perspective, or possibly a team led by an expert who has 15+ years of experience, and has gotten to the point where they can start developing a comprehensive approach of their own.
+I started learning and using Scrum planning techniques when I was a team of one at Touro, and both Vitals and Imagine Easy use parts of Scrum.
 
 ## Technologies
 
@@ -71,7 +75,6 @@ When I was at Vitals, I did a lot of work with our PostgreSQL servers in terms o
 * Clean Code
 * Incremental architecture and design
 * SOLID
-* Strong typing
 * Functional-programming style (minimize mutable state, focus on returning values)
 * [Healthy Codebase](brewhouse.io/blog/2014/11/10/healthy-codebase-and-preparatory-refactoring.html)
 * [@unclebobmartin](https://twitter.com/unclebobmartin)
